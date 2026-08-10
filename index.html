@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
+<meta name="supported-color-schemes" content="light">
+<title>Dank Booking — จองรถเช่า โรงแรม ตั๋วเครื่องบิน ลดสูงสุด 40%</title>
+<meta name="description" content="Dank Booking — ตัวแทนจองท่องเที่ยว รถเช่า โรงแรม ตั๋วเครื่องบิน รถรับส่ง ออนเซ็นและกิจกรรม ไทยและทั่วโลก ส่วนลดสูงสุด 40%">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@500;600;700&family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+Thai:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ocean:#0E7C86; --ocean-deep:#0A5960; --ink:#14262B; --sand:#F7F3EA;
+    --shell:#EFE9DA; --line:#DDD5C4; --line-dark:#39474b; --mist:#7C8B8E;
+    --sunset:#F28C38; --deal:#E24E4E; --cloud:#FDFCF8;
+    --wa:#25D366; --lineg:#06C755;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  :root{color-scheme: light only;}
+  html{scroll-behavior:smooth;background:#F7F3EA;}
+  body{background:#F7F3EA !important;color:var(--ink);font-family:'Archivo','Noto Sans Thai','Noto Sans SC','Noto Sans JP',sans-serif;overflow-x:hidden;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important;}
+  }
+  h1,h2,h3{font-family:'Prompt','Noto Sans Thai','Noto Sans SC','Noto Sans JP',sans-serif;font-weight:700;letter-spacing:.005em;}
+  .mono{font-family:'IBM Plex Mono',monospace;}
+  a{color:inherit;text-decoration:none;}
+  ::selection{background:var(--ocean);color:#fff;}
+  .eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:'IBM Plex Mono','Noto Sans Thai',monospace;font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ocean);font-weight:500;}
+  .eyebrow::before{content:'';width:26px;height:2px;background:var(--ocean);}
+
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:14px clamp(16px,4vw,72px);background:rgba(247,243,234,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
+  .brand{display:flex;align-items:center;gap:11px;min-width:0;}
+  .brand-mark{width:36px;height:36px;flex-shrink:0;}
+  .brand-mark svg{width:100%;height:100%;}
+  .brand-name{font-family:'Prompt',sans-serif;font-weight:700;font-size:1.05rem;letter-spacing:.04em;color:var(--ink);white-space:nowrap;text-transform:uppercase;}
+  .brand-name span{color:var(--ocean);}
+  .brand-sub{font-family:'IBM Plex Mono',monospace;font-size:.55rem;color:var(--mist);letter-spacing:.09em;margin-top:1px;white-space:nowrap;}
+  .nav-links{display:flex;gap:28px;}
+  .nav-links a{font-size:.84rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:#54636a;padding-bottom:3px;border-bottom:2px solid transparent;transition:color .2s,border-color .2s;white-space:nowrap;}
+  .nav-links a:hover{color:var(--ink);border-bottom-color:var(--sunset);}
+  .nav-right{display:flex;align-items:center;gap:12px;}
+  .lang{display:flex;border:1px solid var(--line);background:var(--cloud);}
+  .lang button{background:transparent;border:none;padding:8px 11px;font-family:'IBM Plex Mono','Noto Sans SC','Noto Sans JP',monospace;font-size:.68rem;cursor:pointer;color:#54636a;transition:all .15s;}
+  .lang button.active{background:var(--ink);color:#fff;}
+  .nav-cta{background:var(--sunset);color:#fff !important;font-weight:700;font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;padding:10px 18px;border-radius:4px;transition:filter .2s,transform .15s;white-space:nowrap;}
+  .nav-cta:hover{filter:brightness(.93);transform:translateY(-1px);}
+  @media (max-width:1080px){.nav-links{display:none;}}
+  @media (max-width:560px){.brand-sub{display:none;}.nav-cta{display:none;}}
+
+  #hero{padding:140px clamp(20px,5vw,72px) 0;display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(30px,4vw,64px);align-items:center;min-height:88vh;}
+  @media (max-width:960px){#hero{grid-template-columns:1fr;padding-top:118px;min-height:auto;}}
+  .hero-left .tagrow{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:26px;}
+  .chip{font-family:'IBM Plex Mono','Noto Sans Thai',monospace;font-size:.7rem;letter-spacing:.05em;border:1px solid var(--line);padding:7px 13px;color:#5d6c70;background:var(--cloud);border-radius:999px;}
+  h1.hero-title{font-size:clamp(2.5rem,6.4vw,5.2rem);line-height:1.06;color:var(--ink);}
+  h1.hero-title .accent{color:var(--ocean);}
+  h1.hero-title .pop{color:var(--sunset);}
+  .hero-sub{margin-top:24px;font-size:1.05rem;line-height:1.85;color:#4c5a5e;max-width:54ch;}
+  .hero-sub b{color:var(--ink);}
+  .hero-actions{display:flex;gap:16px;margin-top:34px;flex-wrap:wrap;}
+  .btn{font-weight:700;text-transform:uppercase;letter-spacing:.07em;font-size:.9rem;padding:16px 30px;display:inline-block;border-radius:6px;transition:transform .15s,filter .2s,box-shadow .2s;}
+  .btn-solid{background:var(--ocean);color:#fff;}
+  .btn-solid:hover{filter:brightness(1.08);transform:translateY(-2px);box-shadow:0 12px 24px -10px rgba(14,124,134,.55);}
+  .btn-line{border:2px solid var(--ink);color:var(--ink);}
+  .btn-line:hover{background:var(--ink);color:var(--sand);transform:translateY(-2px);}
+
+  .hero-media{position:relative;aspect-ratio:4/4.6;max-height:74vh;width:100%;overflow:hidden;border-radius:12px;border:1px solid var(--line-dark);box-shadow:16px 16px 0 var(--sunset);background:linear-gradient(160deg,#0E7C86 0%,#0A5960 45%,#14262B 100%);}
+  @media (max-width:960px){.hero-media{aspect-ratio:4/4;box-shadow:10px 10px 0 var(--sunset);}}
+  .hm-sun{position:absolute;top:12%;right:14%;width:120px;height:120px;border-radius:50%;background:radial-gradient(circle,#F8C471 0%,#F28C38 70%);box-shadow:0 0 60px rgba(242,140,56,.6);}
+  .hm-wave{position:absolute;left:-10%;right:-10%;height:120px;border-radius:45%;}
+  .hm-w1{bottom:-30px;background:rgba(253,252,248,.12);}
+  .hm-w2{bottom:-58px;background:rgba(253,252,248,.16);}
+  .hm-plane{position:absolute;top:22%;left:12%;color:rgba(253,252,248,.9);}
+  .hm-deal{position:absolute;font-family:'IBM Plex Mono',monospace;font-size:.72rem;letter-spacing:.06em;background:rgba(20,38,43,.72);color:#fff;padding:9px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.25);white-space:nowrap;}
+  .hm-deal b{color:#FFC97E;}
+  .hm-label{position:absolute;left:16px;bottom:15px;z-index:3;font-family:'IBM Plex Mono','Noto Sans Thai',monospace;font-size:.66rem;letter-spacing:.1em;color:#f0eee8;background:rgba(20,38,43,.74);padding:8px 12px;border-radius:6px;display:flex;align-items:center;gap:8px;}
+  .hm-label .dot{width:7px;height:7px;border-radius:50%;background:#3ddc84;animation:blink 1.6s infinite;flex-shrink:0;}
+  @keyframes blink{0%,100%{opacity:1;}50%{opacity:.25;}}
+  @keyframes floaty{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
+  .hm-deal,.hm-plane{animation:floaty 5s ease-in-out infinite;}
+
+  .marquee{margin-top:72px;background:var(--ocean);color:#fff;overflow:hidden;border-top:1px solid var(--ocean-deep);border-bottom:1px solid var(--ocean-deep);}
+  .marquee-track{display:flex;width:max-content;animation:scroll 34s linear infinite;}
+  .marquee:hover .marquee-track{animation-play-state:paused;}
+  @keyframes scroll{to{transform:translateX(-50%);}}
+  .mq-item{font-family:'Prompt','Noto Sans Thai',sans-serif;font-weight:600;font-size:1.1rem;letter-spacing:.03em;text-transform:uppercase;padding:15px 24px;display:flex;align-items:center;gap:24px;white-space:nowrap;}
+  .mq-item b{color:#FFC97E;}
+  .mq-item::after{content:'✦';font-size:.7rem;color:rgba(255,255,255,.55);}
+
+  section{padding:100px clamp(20px,5vw,72px);}
+  .sec-head{max-width:780px;margin-bottom:52px;}
+  .sec-head h2{font-size:clamp(2rem,4.2vw,3.3rem);margin-top:16px;line-height:1.12;}
+  .sec-head p{margin-top:16px;font-size:1.02rem;line-height:1.8;color:#4c5a5e;max-width:62ch;}
+
+  #services{background:var(--sand);padding-top:90px;}
+  .svc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:24px;}
+  .svc-card{background:var(--cloud);border:1px solid var(--line);border-radius:12px;padding:26px 24px 24px;display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s;position:relative;overflow:hidden;}
+  .svc-card:hover{transform:translateY(-6px);box-shadow:0 22px 40px -18px rgba(20,38,43,.3);}
+  .svc-ico{width:52px;height:52px;border-radius:12px;background:rgba(14,124,134,.1);color:var(--ocean);display:flex;align-items:center;justify-content:center;margin-bottom:16px;}
+  .svc-ico svg{width:28px;height:28px;}
+  .deal-badge{position:absolute;top:18px;right:-1px;font-family:'IBM Plex Mono','Noto Sans Thai',monospace;font-size:.7rem;font-weight:500;letter-spacing:.04em;background:var(--deal);color:#fff;padding:6px 12px 6px 14px;border-radius:999px 0 0 999px;}
+  .svc-card h3{font-size:1.2rem;line-height:1.25;padding-right:20px;}
+  .svc-card .scope{margin-top:5px;font-family:'IBM Plex Mono','Noto Sans Thai',monospace;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--mist);}
+  .svc-card p{margin-top:12px;font-size:.92rem;line-height:1.75;color:#4c5a5e;flex:1;}
+  .svc-cta{margin-top:18px;align-self:flex-start;font-weight:700;font-size:.82rem;text-transform:uppercase;letter-spacing:.07em;color:var(--ocean);border:none;background:none;cursor:pointer;font-family:inherit;padding:0;border-bottom:2px solid var(--sunset);padding-bottom:3px;transition:color .2s;}
+  .svc-cta:hover{color:var(--ocean-deep);}
+
+  #how{background:var(--shell);}
+  .how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,3vw,40px);}
+  @media (max-width:860px){.how-grid{grid-template-columns:1fr;}}
+  .how-step{background:var(--cloud);border:1px solid var(--line);border-radius:12px;padding:30px 26px;}
+  .how-step .n{font-family:'Prompt',sans-serif;font-weight:700;font-size:2rem;color:var(--sunset);line-height:1;}
+  .how-step h3{margin-top:14px;font-size:1.15rem;line-height:1.3;}
+  .how-step p{margin-top:10px;color:#4c5a5e;font-size:.94rem;line-height:1.75;}
+
+  #quote{background:var(--sand);}
+  .quote-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(36px,5vw,80px);align-items:start;}
+  @media (max-width:960px){.quote-grid{grid-template-columns:1fr;}}
+  .q-side p{color:#4c5a5e;line-height:1.85;font-size:1rem;margin-top:16px;}
+  .q-side b{color:var(--ink);}
+  .q-perks{margin-top:24px;display:flex;flex-direction:column;gap:14px;}
+  .q-perk{display:flex;gap:12px;align-items:flex-start;font-size:.95rem;color:#3d4c50;line-height:1.6;}
+  .q-perk::before{content:'✓';flex-shrink:0;width:22px;height:22px;border-radius:50%;background:rgba(14,124,134,.12);color:var(--ocean);font-weight:700;display:flex;align-items:center;justify-content:center;font-size:.75rem;margin-top:1px;}
+  .form-panel{background:var(--ocean);color:#fff;padding:clamp(28px,4vw,44px);border-radius:14px;box-shadow:14px 14px 0 var(--ink);}
+  .form-panel h3{font-size:1.5rem;letter-spacing:.02em;}
+  .form-panel > p{margin-top:10px;font-size:.95rem;line-height:1.75;color:#cfe8e6;}
+  .form-panel form{margin-top:24px;display:flex;flex-direction:column;gap:14px;}
+  .f-label{font-family:'IBM Plex Mono','Noto Sans Thai',monospace;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:#bfe0dd;margin-bottom:-6px;}
+  .f-svcs{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+  @media (max-width:560px){.f-svcs{grid-template-columns:1fr;}}
+  .f-svc{display:flex;flex-wrap:wrap;align-items:center;gap:6px 9px;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.3);border-radius:8px;padding:11px 12px;cursor:pointer;font-size:.88rem;line-height:1.4;transition:background .15s,border-color .15s;min-width:0;}
+  .f-svc > span:first-of-type{flex:1;min-width:0;}
+  .f-svc:hover{background:rgba(255,255,255,.16);}
+  .f-svc input{accent-color:var(--sunset);width:16px;height:16px;flex-shrink:0;}
+  .f-svc .fd{margin-left:auto;font-family:'IBM Plex Mono',monospace;font-size:.62rem;background:var(--deal);padding:3px 7px;border-radius:999px;white-space:nowrap;}
+  .f-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+  @media (max-width:560px){.f-row{grid-template-columns:1fr;}}
+  .form-panel input,.form-panel textarea,.form-panel select{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.35);border-radius:8px;color:#fff;padding:13px 14px;font-family:inherit;font-size:.95rem;outline:none;transition:border-color .2s,background .2s;width:100%;}
+  .form-panel input::placeholder,.form-panel textarea::placeholder{color:#a9d3d0;}
+  .form-panel input:focus,.form-panel textarea:focus,.form-panel select:focus{border-color:#fff;background:rgba(255,255,255,.16);}
+  .form-panel select option{color:var(--ink);background:#fff;}
+  .form-panel input[type="date"]{color-scheme:dark;}
+  .f-hidden{display:none !important;}
+  .q-submit{background:var(--sunset);color:#fff;border:none;border-radius:8px;padding:16px;font-family:inherit;font-weight:700;text-transform:uppercase;letter-spacing:.09em;font-size:.92rem;cursor:pointer;transition:filter .2s,transform .15s;}
+  .q-submit:hover{filter:brightness(.93);transform:translateY(-2px);}
+  .q-need{font-size:.82rem;color:#FFD9A8;display:none;}
+  .q-via{display:none;flex-direction:column;gap:10px;border-top:1px dashed rgba(255,255,255,.4);padding-top:16px;}
+  .q-via.open{display:flex;}
+  .q-via-t{font-size:.88rem;color:#cfe8e6;}
+  .q-via-row{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;}
+  @media (max-width:560px){.q-via-row{grid-template-columns:1fr;}}
+  .q-via-btn{border:none;border-radius:8px;padding:12px 10px;font-family:inherit;font-weight:700;font-size:.85rem;cursor:pointer;color:#fff;display:flex;align-items:center;justify-content:center;gap:8px;transition:filter .15s;}
+  .q-via-btn:hover{filter:brightness(.92);}
+  .q-via-btn svg{width:17px;height:17px;flex-shrink:0;}
+  .qv-mail{background:var(--ink);}
+  .qv-wa{background:var(--wa);}
+  .qv-line{background:var(--lineg);}
+  .qv-copy{background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.4);}
+  .q-note{font-size:.78rem;color:#a9d3d0;line-height:1.6;}
+
+  #contact{background:var(--shell);}
+  .c-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;}
+  .c-card{background:var(--cloud);border:1px solid var(--line);border-radius:12px;padding:24px 22px;display:flex;flex-direction:column;gap:6px;transition:transform .2s,box-shadow .2s;}
+  .c-card:hover{transform:translateY(-4px);box-shadow:0 16px 32px -16px rgba(20,38,43,.3);}
+  .c-card .ic{width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;margin-bottom:8px;}
+  .c-card .ic svg{width:22px;height:22px;}
+  .ic-line{background:var(--lineg);}
+  .ic-wa{background:var(--wa);}
+  .ic-phone{background:var(--ocean);}
+  .ic-mail{background:var(--sunset);}
+  .c-card .lbl{font-family:'IBM Plex Mono','Noto Sans Thai',monospace;font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--mist);}
+  .c-card .val{font-size:1.02rem;font-weight:600;color:var(--ink);word-break:break-all;}
+  .c-card .val:hover{color:var(--ocean);}
+  .c-reply{margin-top:26px;font-family:'IBM Plex Mono','Noto Sans Thai',monospace;font-size:.78rem;color:#5d6c70;display:flex;align-items:center;gap:9px;}
+  .c-reply::before{content:'';width:8px;height:8px;border-radius:50%;background:#3ddc84;}
+
+  footer{background:var(--ink);color:#9fb0b4;padding:38px clamp(20px,5vw,72px);}
+  .foot-top{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:18px;}
+  footer .fm{font-family:'IBM Plex Mono','Noto Sans Thai',monospace;font-size:.72rem;letter-spacing:.06em;}
+  footer .fl{display:flex;gap:24px;}
+  footer .fl a{font-size:.84rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;transition:color .2s;}
+  footer .fl a:hover{color:var(--sunset);}
+  .disc{margin-top:16px;font-size:.72rem;line-height:1.7;color:#6d7f83;max-width:80ch;}
+
+  .chat-fab{position:fixed;right:18px;bottom:18px;z-index:120;background:var(--ink);color:#fff;display:flex;align-items:center;gap:8px;padding:14px 20px;border-radius:999px;font-weight:700;font-size:.88rem;box-shadow:0 12px 28px -6px rgba(0,0,0,.5);cursor:pointer;border:none;font-family:inherit;transition:transform .15s;}
+  .chat-fab:hover{transform:translateY(-2px);}
+  .chat-fab svg{width:18px;height:18px;flex-shrink:0;}
+  .chat-panel{position:fixed;right:14px;bottom:84px;z-index:130;width:min(360px,calc(100vw - 28px));height:min(480px,64vh);background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 24px 60px -12px rgba(20,38,43,.45);display:none;flex-direction:column;overflow:hidden;}
+  .chat-panel.open{display:flex;}
+  .chat-head{background:var(--ocean);color:#fff;padding:13px 16px;font-weight:700;display:flex;justify-content:space-between;align-items:center;font-size:.95rem;}
+  .chat-head button{background:none;border:none;color:#fff;font-size:1.1rem;cursor:pointer;}
+  .chat-msgs{flex:1;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:10px;background:var(--sand);}
+  .chat-msg{max-width:85%;padding:10px 13px;font-size:.88rem;line-height:1.6;white-space:pre-wrap;border-radius:10px;}
+  .chat-msg.bot{background:#fff;border:1px solid var(--line);align-self:flex-start;color:var(--ink);}
+  .chat-msg.me{background:var(--ocean);color:#fff;align-self:flex-end;}
+  .chat-msg.load{color:var(--mist);font-style:italic;background:transparent;border:none;}
+  .chat-msg a{color:var(--ocean);font-weight:600;text-decoration:underline;}
+  .chat-in{display:flex;border-top:1px solid var(--line);}
+  .chat-in input{flex:1;border:none;padding:13px 14px;font-family:inherit;font-size:.9rem;outline:none;background:#fff;color:var(--ink);}
+  .chat-in button{background:var(--ocean);color:#fff;border:none;padding:0 18px;font-weight:700;cursor:pointer;font-family:inherit;}
+
+  .js .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease;}
+  .js .reveal.in{opacity:1;transform:translateY(0);}
+</style>
+</head>
+<body>
+<script>
+/* fail-safe: content stays visible unless JS is healthy */
+document.documentElement.classList.add('js');
+window.addEventListener('error', function(){ document.documentElement.classList.remove('js'); });
+document.addEventListener('DOMContentLoaded', function(){
+  try{
+    var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }); }, {threshold:.12});
+    document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+  }catch(err){ document.documentElement.classList.remove('js'); }
+});
+</script>
+
+<nav>
+  <div class="brand">
+    <div class="brand-mark">
+      <svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="46" fill="#0E7C86"/><path d="M18 62 Q35 48 50 55 T82 45" stroke="#FDFCF8" stroke-width="6" fill="none" stroke-linecap="round"/><path d="M60 26 L84 34 L38 74 L42 54 Z" fill="#F28C38"/></svg>
+    </div>
+    <div>
+      <div class="brand-name">DANK <span>BOOKING</span></div>
+      <div class="brand-sub">TRAVEL DEALS · THAILAND &amp; WORLDWIDE</div>
+    </div>
+  </div>
+  <div class="nav-links">
+    <a href="#services" data-i18n="nav_services">บริการ</a>
+    <a href="#how" data-i18n="nav_how">วิธีจอง</a>
+    <a href="#quote" data-i18n="nav_quote">ขอราคา</a>
+    <a href="#contact" data-i18n="nav_contact">ติดต่อ</a>
+  </div>
+  <div class="nav-right">
+    <div class="lang" id="lang">
+      <button data-lang="th" class="active">TH</button>
+      <button data-lang="en">EN</button>
+      <button data-lang="zh">中文</button>
+      <button data-lang="ja">日本語</button>
+    </div>
+    <a href="#quote" class="nav-cta" data-i18n="nav_cta">ขอใบเสนอราคา</a>
+  </div>
+</nav>
+
+<header id="hero">
+  <div class="hero-left">
+    <div class="tagrow reveal">
+      <span class="chip" data-i18n="chip1">ส่วนลดสูงสุด 40%</span>
+      <span class="chip" data-i18n="chip2">ไทยและทั่วโลก</span>
+      <span class="chip" data-i18n="chip3">ตอบไวทุกช่องทาง</span>
+    </div>
+    <h1 class="hero-title reveal" data-i18n="hero_title">เที่ยวที่เดิม<br>จ่าย<span class="pop">ถูกกว่า</span><br>กับ <span class="accent">Dank Booking</span></h1>
+    <p class="hero-sub reveal" data-i18n="hero_sub"><b>Dank Booking</b> คือตัวแทนจองท่องเที่ยวที่เข้าถึงราคาพิเศษ — รถเช่า โรงแรม ตั๋วเครื่องบิน รถรับส่ง ออนเซ็น สปา และกิจกรรม ทั้งในไทยและทั่วโลก แค่บอกทริปที่ต้องการ เราเสนอราคาพร้อมส่วนลดสูงสุด 40% ให้คุณยืนยันก่อนจองจริง</p>
+    <div class="hero-actions reveal">
+      <a href="#quote" class="btn btn-solid" data-i18n="hero_btn1">ขอใบเสนอราคาฟรี</a>
+      <a href="#contact" class="btn btn-line" data-i18n="hero_btn2">ทักหาเราเลย</a>
+    </div>
+  </div>
+  <div class="hero-media reveal" aria-hidden="true">
+    <div class="hm-sun"></div>
+    <svg class="hm-plane" width="64" height="64" viewBox="0 0 24 24" fill="currentColor"><path d="M21.5 15.5 13 11V5.5a1.5 1.5 0 0 0-3 0V11l-8.5 4.5v2L10 15v4.5l-2 1.5v1.5l3.5-1 3.5 1V21l-2-1.5V15l8.5 2.5v-2z"/></svg>
+    <div class="hm-wave hm-w1"></div>
+    <div class="hm-wave hm-w2"></div>
+    <div class="hm-deal" style="top:44%;right:10%;">HOTEL <b>-40%</b></div>
+    <div class="hm-deal" style="top:60%;left:10%;animation-delay:1.2s;">FLIGHT <b>-30%</b></div>
+    <div class="hm-deal" style="top:76%;right:18%;animation-delay:2.2s;">CAR <b>-40%</b></div>
+    <div class="hm-label"><span class="dot"></span> <span data-i18n="media_label">ดีลอัปเดตทุกวัน — ไทยและทั่วโลก</span></div>
+  </div>
+</header>
+
+<div class="marquee" aria-hidden="true"><div class="marquee-track" id="mq-track"></div></div>
+
+<section id="services">
+  <div class="sec-head reveal">
+    <span class="eyebrow" data-i18n="svc_eyebrow">บริการของเรา</span>
+    <h2 data-i18n="svc_h2">จองอะไรได้บ้าง<br>ลดเท่าไหร่</h2>
+    <p data-i18n="svc_p">ทุกบริการครอบคลุมทั้งประเทศไทยและทั่วโลก — ราคาที่เสนอคือราคาหลังหักส่วนลดจากราคาขายปกติ ยืนยันจริงตอนเสนอราคา</p>
+  </div>
+  <div class="svc-grid" id="svc-grid"></div>
+</section>
+
+<section id="how">
+  <div class="sec-head reveal">
+    <span class="eyebrow" data-i18n="how_eyebrow">วิธีจอง</span>
+    <h2 data-i18n="how_h2">ง่ายแค่ 3 ขั้นตอน</h2>
+    <p data-i18n="how_p">ไม่ต้องเทียบราคาเองหลายเว็บ — บอกเรามาที่เดียว เดี๋ยวเราหาราคาที่ดีที่สุดให้</p>
+  </div>
+  <div class="how-grid">
+    <div class="how-step reveal"><div class="n">01</div><h3 data-i18n="how1h">บอกทริปของคุณ</h3><p data-i18n="how1p">กรอกฟอร์มขอราคา หรือทักมาทาง LINE / WhatsApp — บอกปลายทาง วันเดินทาง จำนวนคน และบริการที่ต้องการ</p></div>
+    <div class="how-step reveal"><div class="n">02</div><h3 data-i18n="how2h">รับใบเสนอราคาพร้อมส่วนลด</h3><p data-i18n="how2p">เราเช็คราคาและสิทธิ์ส่วนลดให้ แล้วส่งใบเสนอราคากลับไปให้เปรียบเทียบ — ไม่มีค่าใช้จ่าย ไม่มีข้อผูกมัด</p></div>
+    <div class="how-step reveal"><div class="n">03</div><h3 data-i18n="how3h">ยืนยันแล้วออกเดินทาง</h3><p data-i18n="how3p">พอใจราคาแล้วค่อยยืนยันการจอง เราจัดการให้ครบ ส่งเอกสารยืนยันถึงมือ พร้อมดูแลจนจบทริป</p></div>
+  </div>
+</section>
+
+<section id="quote">
+  <div class="quote-grid">
+    <div class="q-side reveal">
+      <span class="eyebrow" data-i18n="q_eyebrow">ขอใบเสนอราคา</span>
+      <h2 style="font-size:clamp(1.9rem,3.8vw,3rem);margin-top:14px;line-height:1.15;" data-i18n="q_h2">บอกทริปที่อยากไป<br>เดี๋ยวเราจัดให้</h2>
+      <p data-i18n="q_p">เลือกบริการที่ต้องการ กรอกรายละเอียดทริป แล้วส่งหาเราทางช่องทางที่สะดวก — ยิ่งบอกละเอียด ใบเสนอราคายิ่งแม่น</p>
+      <div class="q-perks">
+        <div class="q-perk" data-i18n="perk1">ขอราคาฟรี ไม่มีข้อผูกมัด — ตัดสินใจหลังเห็นราคาจริง</div>
+        <div class="q-perk" data-i18n="perk2">ราคาเดียวจบ รวมส่วนลดแล้ว ไม่มีบวกเพิ่มทีหลัง</div>
+        <div class="q-perk" data-i18n="perk3">มีคนดูแลจริงตลอดทริป ติดต่อได้ทั้ง LINE, WhatsApp, โทร และอีเมล</div>
+      </div>
+    </div>
+    <div class="form-panel reveal">
+      <h3 data-i18n="form_h3">ฟอร์มขอราคา</h3>
+      <p data-i18n="form_p">กรอกเสร็จแล้วเลือกส่งทางอีเมล WhatsApp หรือคัดลอกไปวางใน LINE ได้เลย</p>
+      <form id="quote-form" novalidate>
+        <span class="f-label" data-i18n="q_services">บริการที่ต้องการ (เลือกได้หลายอย่าง)</span>
+        <div class="f-svcs" id="f-svcs"></div>
+
+        <span class="f-label" data-i18n="q_dest">ปลายทาง</span>
+        <input type="text" id="q-dest" data-ph="q_dest_ph" placeholder="เช่น ภูเก็ต / โตเกียว / Tokyo">
+
+        <div class="f-row">
+          <div><span class="f-label" data-i18n="q_start">วันเริ่มเดินทาง</span><input type="date" id="q-start" style="margin-top:6px;"></div>
+          <div><span class="f-label" data-i18n="q_end">วันสิ้นสุด</span><input type="date" id="q-end" style="margin-top:6px;"></div>
+        </div>
+
+        <div class="f-row">
+          <div><span class="f-label" data-i18n="q_adults">ผู้ใหญ่</span><input type="number" id="q-adults" min="1" value="2" style="margin-top:6px;"></div>
+          <div><span class="f-label" data-i18n="q_children">เด็ก</span><input type="number" id="q-children" min="0" value="0" style="margin-top:6px;"></div>
+        </div>
+
+        <div id="f-route" class="f-hidden">
+          <div class="f-row">
+            <div><span class="f-label" data-i18n="q_pickup">จุดรับ</span><input type="text" id="q-pickup" data-ph="q_pickup_ph" placeholder="เช่น สนามบินสุวรรณภูมิ" style="margin-top:6px;"></div>
+            <div><span class="f-label" data-i18n="q_dropoff">จุดส่ง</span><input type="text" id="q-dropoff" data-ph="q_dropoff_ph" placeholder="เช่น โรงแรมในพัทยา" style="margin-top:6px;"></div>
+          </div>
+        </div>
+
+        <div id="f-flight" class="f-hidden">
+          <span class="f-label" data-i18n="q_class">ชั้นโดยสาร</span>
+          <select id="q-class" style="margin-top:6px;">
+            <option value="eco" data-i18n="cls_eco">ชั้นประหยัด (Economy)</option>
+            <option value="prem" data-i18n="cls_prem">ประหยัดพรีเมียม (Premium Economy)</option>
+            <option value="biz" data-i18n="cls_biz">ชั้นธุรกิจ (Business)</option>
+            <option value="first" data-i18n="cls_first">ชั้นหนึ่ง (First)</option>
+          </select>
+        </div>
+
+        <div id="f-hotel" class="f-hidden">
+          <span class="f-label" data-i18n="q_stars">ระดับโรงแรม</span>
+          <select id="q-stars" style="margin-top:6px;">
+            <option value="any" data-i18n="st_any">ระดับไหนก็ได้</option>
+            <option value="3">3★</option>
+            <option value="4">4★</option>
+            <option value="5">5★</option>
+          </select>
+        </div>
+
+        <span class="f-label" data-i18n="q_budget">งบประมาณโดยประมาณ (ไม่บังคับ)</span>
+        <input type="text" id="q-budget" data-ph="q_budget_ph" placeholder="เช่น 30,000 บาท">
+
+        <span class="f-label" data-i18n="q_name">ชื่อของคุณ</span>
+        <input type="text" id="q-name" data-ph="q_name_ph" placeholder="ชื่อ-นามสกุล" required>
+
+        <div class="f-row">
+          <div>
+            <span class="f-label" data-i18n="q_channel">ช่องทางติดต่อกลับ</span>
+            <select id="q-channel" style="margin-top:6px;">
+              <option value="line">LINE</option>
+              <option value="wa">WhatsApp</option>
+              <option value="phone" data-i18n="chan_phone">โทรศัพท์</option>
+              <option value="email" data-i18n="chan_email">อีเมล</option>
+            </select>
+          </div>
+          <div>
+            <span class="f-label" data-i18n="q_contact">เบอร์ / ไอดี / อีเมลของคุณ</span>
+            <input type="text" id="q-contact" data-ph="q_contact_ph" placeholder="เช่น 08x-xxx-xxxx" required style="margin-top:6px;">
+          </div>
+        </div>
+
+        <span class="f-label" data-i18n="q_notes">รายละเอียดเพิ่มเติม (ไม่บังคับ)</span>
+        <textarea id="q-notes" rows="3" data-ph="q_notes_ph" placeholder="เช่น อยากได้รถ SUV / โรงแรมใกล้ทะเล / มีผู้สูงอายุเดินทางด้วย"></textarea>
+
+        <button type="submit" class="q-submit" data-i18n="q_send">สร้างใบขอราคา</button>
+        <span class="q-need" id="q-need" data-i18n="q_need">กรุณาเลือกบริการอย่างน้อย 1 อย่าง และกรอกชื่อกับช่องทางติดต่อ</span>
+
+        <div class="q-via" id="q-via">
+          <span class="q-via-t" data-i18n="q_via">✓ สร้างข้อความแล้ว — เลือกช่องทางส่งหาเรา:</span>
+          <div class="q-via-row">
+            <button type="button" class="q-via-btn qv-mail" id="qv-mail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"/><path d="m22 6-10 7L2 6"/></svg><span data-i18n="q_via_email">ส่งอีเมล</span></button>
+            <button type="button" class="q-via-btn qv-wa" id="qv-wa"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.2 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5s.8 1.9.8 2c.1.1.1.3 0 .5l-.3.5c-.2.2-.3.4-.1.7.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.5.3.1.1.1.7-.1 1.3z"/></svg><span data-i18n="q_via_wa">ส่งทาง WhatsApp</span></button>
+            <button type="button" class="q-via-btn qv-line line-only" id="qv-line"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 5.7 2 10.2c0 4 3.5 7.4 8.3 8.1.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.6s6-3.6 8.2-6.1C21.6 13.6 22 12 22 10.2 22 5.7 17.5 2 12 2z"/></svg><span data-i18n="q_via_line">คัดลอก + เปิด LINE</span></button>
+            <button type="button" class="q-via-btn qv-copy" id="qv-copy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg><span data-i18n="q_copy">คัดลอกข้อความ</span></button>
+          </div>
+          <span class="q-note" id="q-copied-note" style="display:none;" data-i18n="q_copied">คัดลอกแล้ว ✓ — เปิด LINE แล้ววางข้อความส่งหาเราได้เลย</span>
+          <span class="q-note" data-i18n="q_line_note">*LINE ยังไม่รองรับการแนบข้อความอัตโนมัติ — ระบบจะคัดลอกให้ แล้วค่อยวางในแชท</span>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="sec-head reveal">
+    <span class="eyebrow" data-i18n="c_eyebrow">ติดต่อเรา</span>
+    <h2 data-i18n="c_h2">ทักมาได้ทุกช่องทาง</h2>
+    <p data-i18n="c_p">สะดวกช่องทางไหน ใช้ช่องทางนั้นได้เลย — ทีมงานคนจริงตอบเอง ไม่ใช่บอทอย่างเดียว</p>
+  </div>
+  <div class="c-grid">
+    <a class="c-card reveal line-only" data-contact="line" href="#" target="_blank" rel="noopener">
+      <div class="ic ic-line"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 5.7 2 10.2c0 4 3.5 7.4 8.3 8.1.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.6s6-3.6 8.2-6.1C21.6 13.6 22 12 22 10.2 22 5.7 17.5 2 12 2z"/></svg></div>
+      <span class="lbl">LINE</span>
+      <span class="val" data-contact="line-id">@dankbooking</span>
+    </a>
+    <a class="c-card reveal" data-contact="wa" href="#" target="_blank" rel="noopener">
+      <div class="ic ic-wa"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.2 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5s.8 1.9.8 2c.1.1.1.3 0 .5l-.3.5c-.2.2-.3.4-.1.7.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.7-.1l1-1.2c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.5.3.1.1.1.7-.1 1.3z"/></svg></div>
+      <span class="lbl">WhatsApp</span>
+      <span class="val" data-contact="wa-num">082-829-8995</span>
+    </a>
+    <a class="c-card reveal" data-contact="tel" href="tel:0828298995">
+      <div class="ic ic-phone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+      <span class="lbl" data-i18n="lbl_phone">โทรศัพท์</span>
+      <span class="val" data-contact="tel-num">082-829-8995</span>
+    </a>
+    <a class="c-card reveal" data-contact="mail" href="mailto:bryank31172@gmail.com">
+      <div class="ic ic-mail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v16H4z"/><path d="m22 6-10 7L2 6"/></svg></div>
+      <span class="lbl" data-i18n="lbl_email">อีเมล</span>
+      <span class="val" data-contact="mail-addr">bryank31172@gmail.com</span>
+    </a>
+  </div>
+  <div class="c-reply reveal" data-i18n="c_reply">ตอบกลับไวในเวลาทำการ — นอกเวลาทิ้งข้อความไว้ได้เลย เราติดต่อกลับแน่นอน</div>
+</section>
+
+<footer>
+  <div class="foot-top">
+    <div class="fm" data-i18n="footer_txt">© Dank Booking — ตัวแทนจองท่องเที่ยว ไทยและทั่วโลก</div>
+    <div class="fl">
+      <a data-contact="tel" href="tel:0828298995" data-i18n="f_call">โทร</a>
+      <a data-contact="wa" href="#" target="_blank" rel="noopener">WhatsApp</a>
+      <a data-contact="mail" href="mailto:bryank31172@gmail.com" data-i18n="f_email">อีเมล</a>
+    </div>
+  </div>
+  <p class="disc" data-i18n="disc">Dank Booking เป็นตัวแทนรับจองอิสระ ส่วนลดคำนวณเทียบกับราคาขายปกติของผู้ให้บริการ และขึ้นอยู่กับช่วงเวลาเดินทางและจำนวนที่ว่าง ราคาสุดท้ายยืนยันในใบเสนอราคา</p>
+</footer>
+
+<button class="chat-fab" id="chat-fab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg><span data-i18n="ch_fab">แชทถามดีล</span></button>
+
+<div class="chat-panel" id="chat-panel">
+  <div class="chat-head"><span data-i18n="ch_title">ผู้ช่วย Dank Booking (AI)</span><button id="chat-close">✕</button></div>
+  <div class="chat-msgs" id="chat-msgs"></div>
+  <div class="chat-in">
+    <input type="text" id="chat-input" data-ph="ch_ph" placeholder="ถามเรื่องดีลหรือทริปได้เลย...">
+    <button id="chat-send" data-i18n="ch_send">ส่ง</button>
+  </div>
+</div>
+
+<script>
+/* ============ CONTACT — single source of truth ============ */
+/* ★★ แก้ข้อมูลติดต่อที่นี่ที่เดียว / edit contact details here only ★★
+   lineId ยังเป็น placeholder: ใส่ LINE ID จริง (เช่น '@dankbooking') แล้วปุ่ม LINE จะโชว์อัตโนมัติ */
+const CONTACT = {
+  lineId:   '',                       // ★ PLACEHOLDER — e.g. '@dankbooking' → https://line.me/R/ti/p/@dankbooking
+  whatsapp: '66828298995',            // digits only, country code, no '+'
+  phone:    '082-829-8995',
+  phoneHref:'tel:0828298995',
+  email:    'bryank31172@gmail.com'
+};
+
+/* ============ SERVICES ============ */
+const SERVICES = [
+  {id:'car', icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 11l1.5-4.5A2 2 0 0 1 8.4 5h7.2a2 2 0 0 1 1.9 1.5L19 11"/><path d="M3 16v-3a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v3"/><circle cx="7" cy="16.5" r="1.8"/><circle cx="17" cy="16.5" r="1.8"/></svg>',
+   n:{th:'รถเช่า',en:'Car Rental',zh:'租车',ja:'レンタカー'},
+   deal:{th:'ลด 30–40%',en:'30–40% OFF',zh:'省30–40%',ja:'30–40% OFF'},
+   d:{th:'รถเก๋ง SUV รถตู้ ทั้งขับเองและพร้อมคนขับ รับ-คืนสนามบินหรือในเมือง จองผ่านเราได้ราคาต่ำกว่าจองตรง',
+      en:'Sedans, SUVs and vans — self-drive or with driver, airport or city pick-up. Booking through us beats booking direct.',
+      zh:'轿车、SUV、面包车——自驾或含司机，机场或市区取还车。通过我们预订比直接预订更便宜。',
+      ja:'セダン・SUV・バン。セルフドライブもドライバー付きも、空港・市内受け渡し対応。直接予約よりお得です。'}},
+  {id:'hotel', icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21V7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14"/><path d="M1 21h22"/><path d="M8 9h.01M12 9h.01M16 9h.01M8 13h.01M12 13h.01M16 13h.01"/><path d="M10 21v-4h4v4"/></svg>',
+   n:{th:'จองโรงแรม',en:'Hotel Booking',zh:'酒店预订',ja:'ホテル予約'},
+   deal:{th:'ลด 30–40%',en:'30–40% OFF',zh:'省30–40%',ja:'30–40% OFF'},
+   d:{th:'ตั้งแต่ 3 ดาวถึงหรู 5 ดาว รีสอร์ท พูลวิลล่า ทั้งไทยและต่างประเทศ — บอกสไตล์ที่ชอบ เราหาราคาดีที่สุดให้',
+      en:'From solid 3-star stays to 5-star luxury, resorts and pool villas — in Thailand and worldwide. Tell us your style, we find the best rate.',
+      zh:'从舒适三星到豪华五星、度假村、泳池别墅——泰国及全球。告诉我们您的喜好，我们找到最优价格。',
+      ja:'3つ星からラグジュアリー5つ星、リゾート、プールヴィラまで。タイも海外も、ご希望に合わせて最安値をお探しします。'}},
+  {id:'flight', icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>',
+   n:{th:'ตั๋วเครื่องบิน',en:'Flights',zh:'机票',ja:'航空券'},
+   deal:{th:'ลดสูงสุด 20–30%',en:'UP TO 20–30% OFF',zh:'最高省20–30%',ja:'最大20–30% OFF'},
+   d:{th:'ในประเทศและระหว่างประเทศ ทุกชั้นโดยสาร — ส่งเส้นทางกับวันเดินทางมา เราเช็คราคาหลายสายการบินให้พร้อมส่วนลด',
+      en:'Domestic and international, every cabin class. Send your route and dates — we compare airlines and apply our discount.',
+      zh:'国内与国际航线，全舱位。发送您的行程和日期，我们比价多家航空公司并给出折扣。',
+      ja:'国内線・国際線、全クラス対応。ルートと日程を送るだけで、複数航空会社を比較し割引価格をご案内します。'}},
+  {id:'transfer', icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 6v6M15 6v6M2 12h19.6"/><path d="M18 18h3s.5-1.7.8-2.8c.1-.4.2-.8.2-1.2v-4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v8h3"/><circle cx="7" cy="18" r="2"/><circle cx="15" cy="18" r="2"/></svg>',
+   n:{th:'รถรับ-ส่ง',en:'Transfers',zh:'接送服务',ja:'送迎・トランスファー'},
+   deal:{th:'ลด 40%',en:'40% OFF',zh:'省40%',ja:'40% OFF'},
+   d:{th:'รับ-ส่งสนามบิน และเดินทางข้ามเมือง รถส่วนตัวพร้อมคนขับ ตรงเวลา ราคาเหมาชัดเจน ทั้งไทยและต่างประเทศ',
+      en:'Airport pick-up & drop-off and intercity rides — private car with driver, on time, one clear flat price. Thailand and worldwide.',
+      zh:'机场接送与跨城市出行——专车含司机，准时可靠，一口价。泰国及全球均可安排。',
+      ja:'空港送迎と都市間移動。ドライバー付き専用車、時間厳守、明朗な定額料金。タイも海外も手配可能。'}},
+  {id:'activity', icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 3c-1 2 1 3 0 5M12 3c-1 2 1 3 0 5M17 3c-1 2 1 3 0 5"/><path d="M3 12h18v2a7 7 0 0 1-7 7h-4a7 7 0 0 1-7-7v-2z"/><path d="M21 14h1a2 2 0 0 0 0-4h-1"/></svg>',
+   n:{th:'ออนเซ็น สปา และกิจกรรม',en:'Onsen, Spa & Activities',zh:'温泉·SPA·活动',ja:'温泉・スパ・アクティビティ'},
+   deal:{th:'ลด 30–40%',en:'30–40% OFF',zh:'省30–40%',ja:'30–40% OFF'},
+   d:{th:'ออนเซ็น สปา ทัวร์วันเดียว สวนสนุก บัตรกิจกรรมต่างๆ — จองล่วงหน้าผ่านเรา ถูกกว่าซื้อหน้างานเยอะ',
+      en:'Onsen, spa days, day tours, theme parks and activity tickets — book ahead through us and pay far less than walk-in prices.',
+      zh:'温泉、SPA、一日游、主题乐园及各类活动门票——提前通过我们预订，远低于现场价格。',
+      ja:'温泉、スパ、日帰りツアー、テーマパーク、各種アクティビティ。事前予約で当日料金よりずっとお得に。'}}
+];
+
+/* ============ i18n DICTIONARY ============ */
+const T = {
+th:{
+  nav_services:'บริการ', nav_how:'วิธีจอง', nav_quote:'ขอราคา', nav_contact:'ติดต่อ', nav_cta:'ขอใบเสนอราคา',
+  chip1:'ส่วนลดสูงสุด 40%', chip2:'ไทยและทั่วโลก', chip3:'ตอบไวทุกช่องทาง',
+  hero_title:'เที่ยวที่เดิม<br>จ่าย<span class="pop">ถูกกว่า</span><br>กับ <span class="accent">Dank Booking</span>',
+  hero_sub:'<b>Dank Booking</b> คือตัวแทนจองท่องเที่ยวที่เข้าถึงราคาพิเศษ — รถเช่า โรงแรม ตั๋วเครื่องบิน รถรับส่ง ออนเซ็น สปา และกิจกรรม ทั้งในไทยและทั่วโลก แค่บอกทริปที่ต้องการ เราเสนอราคาพร้อมส่วนลดสูงสุด 40% ให้คุณยืนยันก่อนจองจริง',
+  hero_btn1:'ขอใบเสนอราคาฟรี', hero_btn2:'ทักหาเราเลย', media_label:'ดีลอัปเดตทุกวัน — ไทยและทั่วโลก',
+  svc_eyebrow:'บริการของเรา', svc_h2:'จองอะไรได้บ้าง<br>ลดเท่าไหร่',
+  svc_p:'ทุกบริการครอบคลุมทั้งประเทศไทยและทั่วโลก — ราคาที่เสนอคือราคาหลังหักส่วนลดจากราคาขายปกติ ยืนยันจริงตอนเสนอราคา',
+  svc_scope:'ไทย + ทั่วโลก', svc_cta:'ขอราคาบริการนี้',
+  how_eyebrow:'วิธีจอง', how_h2:'ง่ายแค่ 3 ขั้นตอน', how_p:'ไม่ต้องเทียบราคาเองหลายเว็บ — บอกเรามาที่เดียว เดี๋ยวเราหาราคาที่ดีที่สุดให้',
+  how1h:'บอกทริปของคุณ', how1p:'กรอกฟอร์มขอราคา หรือทักมาทาง LINE / WhatsApp — บอกปลายทาง วันเดินทาง จำนวนคน และบริการที่ต้องการ',
+  how2h:'รับใบเสนอราคาพร้อมส่วนลด', how2p:'เราเช็คราคาและสิทธิ์ส่วนลดให้ แล้วส่งใบเสนอราคากลับไปให้เปรียบเทียบ — ไม่มีค่าใช้จ่าย ไม่มีข้อผูกมัด',
+  how3h:'ยืนยันแล้วออกเดินทาง', how3p:'พอใจราคาแล้วค่อยยืนยันการจอง เราจัดการให้ครบ ส่งเอกสารยืนยันถึงมือ พร้อมดูแลจนจบทริป',
+  q_eyebrow:'ขอใบเสนอราคา', q_h2:'บอกทริปที่อยากไป<br>เดี๋ยวเราจัดให้',
+  q_p:'เลือกบริการที่ต้องการ กรอกรายละเอียดทริป แล้วส่งหาเราทางช่องทางที่สะดวก — ยิ่งบอกละเอียด ใบเสนอราคายิ่งแม่น',
+  perk1:'ขอราคาฟรี ไม่มีข้อผูกมัด — ตัดสินใจหลังเห็นราคาจริง',
+  perk2:'ราคาเดียวจบ รวมส่วนลดแล้ว ไม่มีบวกเพิ่มทีหลัง',
+  perk3:'มีคนดูแลจริงตลอดทริป ติดต่อได้ทั้ง LINE, WhatsApp, โทร และอีเมล',
+  form_h3:'ฟอร์มขอราคา', form_p:'กรอกเสร็จแล้วเลือกส่งทางอีเมล WhatsApp หรือคัดลอกไปวางใน LINE ได้เลย',
+  q_services:'บริการที่ต้องการ (เลือกได้หลายอย่าง)', q_dest:'ปลายทาง', q_dest_ph:'เช่น ภูเก็ต / โตเกียว / Tokyo',
+  q_start:'วันเริ่มเดินทาง', q_end:'วันสิ้นสุด', q_adults:'ผู้ใหญ่', q_children:'เด็ก',
+  q_pickup:'จุดรับ', q_pickup_ph:'เช่น สนามบินสุวรรณภูมิ', q_dropoff:'จุดส่ง', q_dropoff_ph:'เช่น โรงแรมในพัทยา',
+  q_class:'ชั้นโดยสาร', cls_eco:'ชั้นประหยัด (Economy)', cls_prem:'ประหยัดพรีเมียม (Premium Economy)', cls_biz:'ชั้นธุรกิจ (Business)', cls_first:'ชั้นหนึ่ง (First)',
+  q_stars:'ระดับโรงแรม', st_any:'ระดับไหนก็ได้',
+  q_budget:'งบประมาณโดยประมาณ (ไม่บังคับ)', q_budget_ph:'เช่น 30,000 บาท',
+  q_name:'ชื่อของคุณ', q_name_ph:'ชื่อ-นามสกุล',
+  q_channel:'ช่องทางติดต่อกลับ', chan_phone:'โทรศัพท์', chan_email:'อีเมล',
+  q_contact:'เบอร์ / ไอดี / อีเมลของคุณ', q_contact_ph:'เช่น 08x-xxx-xxxx',
+  q_notes:'รายละเอียดเพิ่มเติม (ไม่บังคับ)', q_notes_ph:'เช่น อยากได้รถ SUV / โรงแรมใกล้ทะเล / มีผู้สูงอายุเดินทางด้วย',
+  q_send:'สร้างใบขอราคา', q_need:'กรุณาเลือกบริการอย่างน้อย 1 อย่าง และกรอกชื่อกับช่องทางติดต่อ',
+  q_via:'✓ สร้างข้อความแล้ว — เลือกช่องทางส่งหาเรา:', q_via_email:'ส่งอีเมล', q_via_wa:'ส่งทาง WhatsApp', q_via_line:'คัดลอก + เปิด LINE', q_copy:'คัดลอกข้อความ',
+  q_copied:'คัดลอกแล้ว ✓ — เปิด LINE แล้ววางข้อความส่งหาเราได้เลย',
+  q_line_note:'*LINE ยังไม่รองรับการแนบข้อความอัตโนมัติ — ระบบจะคัดลอกให้ แล้วค่อยวางในแชท',
+  c_eyebrow:'ติดต่อเรา', c_h2:'ทักมาได้ทุกช่องทาง', c_p:'สะดวกช่องทางไหน ใช้ช่องทางนั้นได้เลย — ทีมงานคนจริงตอบเอง ไม่ใช่บอทอย่างเดียว',
+  lbl_phone:'โทรศัพท์', lbl_email:'อีเมล',
+  c_reply:'ตอบกลับไวในเวลาทำการ — นอกเวลาทิ้งข้อความไว้ได้เลย เราติดต่อกลับแน่นอน',
+  footer_txt:'© Dank Booking — ตัวแทนจองท่องเที่ยว ไทยและทั่วโลก', f_call:'โทร', f_email:'อีเมล',
+  disc:'Dank Booking เป็นตัวแทนรับจองอิสระ ส่วนลดคำนวณเทียบกับราคาขายปกติของผู้ให้บริการ และขึ้นอยู่กับช่วงเวลาเดินทางและจำนวนที่ว่าง ราคาสุดท้ายยืนยันในใบเสนอราคา',
+  ch_fab:'แชทถามดีล', ch_title:'ผู้ช่วย Dank Booking (AI)', ch_ph:'ถามเรื่องดีลหรือทริปได้เลย...', ch_send:'ส่ง',
+  ch_hi:'สวัสดีครับ 👋 อยากไปเที่ยวที่ไหน หรืออยากรู้ดีลอะไร ถามได้เลยครับ',
+  ch_err:'ขออภัย แชท AI ยังไม่พร้อมใช้งานตอนนี้ — ทักเราทาง WhatsApp หรือโทร 082-829-8995 ได้เลยครับ',
+  m_subject:'ขอใบเสนอราคา Dank Booking', m_services:'บริการ', m_dest:'ปลายทาง', m_dates:'วันเดินทาง', m_pax:'ผู้เดินทาง',
+  m_adults:'ผู้ใหญ่', m_children:'เด็ก', m_pickup:'จุดรับ', m_dropoff:'จุดส่ง', m_class:'ชั้นโดยสาร', m_stars:'ระดับโรงแรม',
+  m_budget:'งบประมาณ', m_name:'ชื่อ', m_via:'ติดต่อกลับทาง', m_notes:'หมายเหตุ'
+},
+en:{
+  nav_services:'Services', nav_how:'How it works', nav_quote:'Get a quote', nav_contact:'Contact', nav_cta:'Get a quote',
+  chip1:'Up to 40% off', chip2:'Thailand & worldwide', chip3:'Fast replies, any channel',
+  hero_title:'Same trip,<br><span class="pop">lower price</span><br>with <span class="accent">Dank Booking</span>',
+  hero_sub:'<b>Dank Booking</b> is a travel booking agent with access to trade rates — car rental, hotels, flights, transfers, onsen, spa and activities, in Thailand and worldwide. Just tell us your trip; we quote with up to 40% off and you confirm before anything is booked.',
+  hero_btn1:'Get a free quote', hero_btn2:'Message us', media_label:'Deals updated daily — Thailand & worldwide',
+  svc_eyebrow:'Our services', svc_h2:'What you can book<br>and how much you save',
+  svc_p:'Every service covers both Thailand and worldwide destinations. Discounts are off standard retail rates and confirmed in your quote.',
+  svc_scope:'Thailand + worldwide', svc_cta:'Get this deal',
+  how_eyebrow:'How it works', how_h2:'Three simple steps', how_p:'Stop comparing ten websites — tell us once and we find the best price for you.',
+  how1h:'Tell us your trip', how1p:'Fill in the quote form or message us on LINE / WhatsApp — destination, dates, travellers and the services you need.',
+  how2h:'Get a discounted quote', how2p:'We check prices and apply our discounts, then send a quote back for you to compare. Free, no obligation.',
+  how3h:'Confirm & travel', how3p:'Happy with the price? Confirm and we handle the booking end to end, send confirmations, and stay reachable throughout your trip.',
+  q_eyebrow:'Request a quote', q_h2:'Tell us where you want to go —<br>we handle the rest',
+  q_p:'Pick the services you need, fill in your trip details and send it to us on whichever channel suits you. The more detail, the sharper the quote.',
+  perk1:'Free quote, no obligation — decide after you see the real price',
+  perk2:'One final price with discount included — no surprise add-ons',
+  perk3:'A real human looks after you, reachable on LINE, WhatsApp, phone and email',
+  form_h3:'Quote request form', form_p:'When done, send it by email, WhatsApp, or copy it into LINE.',
+  q_services:'Services needed (pick any)', q_dest:'Destination(s)', q_dest_ph:'e.g. Phuket / Tokyo / Paris',
+  q_start:'Start date', q_end:'End date', q_adults:'Adults', q_children:'Children',
+  q_pickup:'Pick-up point', q_pickup_ph:'e.g. Suvarnabhumi Airport', q_dropoff:'Drop-off point', q_dropoff_ph:'e.g. hotel in Pattaya',
+  q_class:'Flight class', cls_eco:'Economy', cls_prem:'Premium Economy', cls_biz:'Business', cls_first:'First',
+  q_stars:'Hotel preference', st_any:'Any level',
+  q_budget:'Approx. budget (optional)', q_budget_ph:'e.g. 30,000 THB',
+  q_name:'Your name', q_name_ph:'Full name',
+  q_channel:'Preferred reply channel', chan_phone:'Phone', chan_email:'Email',
+  q_contact:'Your number / ID / email', q_contact_ph:'e.g. +66 8x xxx xxxx',
+  q_notes:'Extra details (optional)', q_notes_ph:'e.g. SUV preferred / beachfront hotel / travelling with elderly parents',
+  q_send:'Build my quote request', q_need:'Please pick at least one service and fill in your name and contact.',
+  q_via:'✓ Message ready — choose how to send it:', q_via_email:'Send by email', q_via_wa:'Send via WhatsApp', q_via_line:'Copy + open LINE', q_copy:'Copy message',
+  q_copied:'Copied ✓ — open LINE and paste the message to us.',
+  q_line_note:'*LINE cannot pre-fill messages — we copy it for you, just paste it in the chat.',
+  c_eyebrow:'Contact', c_h2:'Reach us on any channel', c_p:'Use whichever channel you prefer — real humans reply, not just a bot.',
+  lbl_phone:'Phone', lbl_email:'Email',
+  c_reply:'Fast replies during business hours — outside hours, leave a message and we will get back to you.',
+  footer_txt:'© Dank Booking — travel booking agent, Thailand & worldwide', f_call:'Call', f_email:'Email',
+  disc:'Dank Booking is an independent booking agent. Discounts are relative to providers\' standard retail rates and subject to travel dates and availability; the final price is confirmed in your quote.',
+  ch_fab:'Ask about deals', ch_title:'Dank Booking Assistant (AI)', ch_ph:'Ask about deals or your trip...', ch_send:'Send',
+  ch_hi:'Hi there 👋 Where would you like to go? Ask me about any deal or trip.',
+  ch_err:'Sorry, the AI chat is unavailable right now — message us on WhatsApp or call 082-829-8995.',
+  m_subject:'Dank Booking — Quote Request', m_services:'Services', m_dest:'Destination', m_dates:'Dates', m_pax:'Travellers',
+  m_adults:'adults', m_children:'children', m_pickup:'Pick-up', m_dropoff:'Drop-off', m_class:'Flight class', m_stars:'Hotel',
+  m_budget:'Budget', m_name:'Name', m_via:'Reply via', m_notes:'Notes'
+},
+zh:{
+  nav_services:'服务', nav_how:'预订流程', nav_quote:'获取报价', nav_contact:'联系我们', nav_cta:'获取报价',
+  chip1:'最高立减40%', chip2:'泰国及全球', chip3:'各渠道快速回复',
+  hero_title:'同样的旅程<br><span class="pop">更低的价格</span><br>就在 <span class="accent">Dank Booking</span>',
+  hero_sub:'<b>Dank Booking</b> 是可拿到同业特价的旅行预订代理——租车、酒店、机票、接送、温泉SPA与活动，覆盖泰国及全球。告诉我们您的行程，我们给出最高减40%的报价，确认后才正式预订。',
+  hero_btn1:'免费获取报价', hero_btn2:'立即联系', media_label:'优惠每日更新 — 泰国及全球',
+  svc_eyebrow:'我们的服务', svc_h2:'可以预订什么<br>能省多少',
+  svc_p:'所有服务均覆盖泰国及全球目的地。折扣基于标准零售价计算，并在报价单中确认。',
+  svc_scope:'泰国 + 全球', svc_cta:'获取此优惠',
+  how_eyebrow:'预订流程', how_h2:'简单三步', how_p:'无需自己比价多个网站——告诉我们一次，我们为您找到最优价格。',
+  how1h:'告诉我们您的行程', how1p:'填写报价表格，或通过 LINE / WhatsApp 联系我们——目的地、日期、人数及所需服务。',
+  how2h:'收到含折扣的报价', how2p:'我们查价并应用折扣，然后发回报价单供您比较——免费、无义务。',
+  how3h:'确认并出发', how3p:'对价格满意后再确认预订。我们全程办理，发送确认凭证，旅途中随时可联系。',
+  q_eyebrow:'索取报价', q_h2:'告诉我们您想去哪里<br>剩下的交给我们',
+  q_p:'选择所需服务，填写行程详情，通过您方便的渠道发送给我们。信息越详细，报价越精准。',
+  perk1:'免费报价，无义务——看到真实价格后再决定',
+  perk2:'一口价含折扣——之后不再加价',
+  perk3:'真人全程服务，可通过 LINE、WhatsApp、电话和邮件联系',
+  form_h3:'报价申请表', form_p:'填写完成后，可通过邮件、WhatsApp 发送，或复制粘贴到 LINE。',
+  q_services:'所需服务（可多选）', q_dest:'目的地', q_dest_ph:'如 普吉岛 / 东京 / 巴黎',
+  q_start:'出发日期', q_end:'结束日期', q_adults:'成人', q_children:'儿童',
+  q_pickup:'接载地点', q_pickup_ph:'如 素万那普机场', q_dropoff:'送达地点', q_dropoff_ph:'如 芭提雅的酒店',
+  q_class:'舱位', cls_eco:'经济舱', cls_prem:'高端经济舱', cls_biz:'商务舱', cls_first:'头等舱',
+  q_stars:'酒店星级', st_any:'不限',
+  q_budget:'预算（选填）', q_budget_ph:'如 30,000 泰铢',
+  q_name:'您的姓名', q_name_ph:'姓名',
+  q_channel:'回复渠道', chan_phone:'电话', chan_email:'邮件',
+  q_contact:'您的号码 / ID / 邮箱', q_contact_ph:'如 +86 1xx xxxx xxxx',
+  q_notes:'其他要求（选填）', q_notes_ph:'如 想要SUV / 海边酒店 / 有老人同行',
+  q_send:'生成报价请求', q_need:'请至少选择一项服务，并填写姓名和联系方式。',
+  q_via:'✓ 信息已生成——选择发送方式：', q_via_email:'邮件发送', q_via_wa:'WhatsApp 发送', q_via_line:'复制并打开 LINE', q_copy:'复制信息',
+  q_copied:'已复制 ✓ — 打开 LINE 粘贴发送给我们即可。',
+  q_line_note:'*LINE 无法自动填入信息——我们已为您复制，粘贴到聊天中即可。',
+  c_eyebrow:'联系我们', c_h2:'任意渠道均可联系', c_p:'用您最方便的渠道即可——由真人回复，而不只是机器人。',
+  lbl_phone:'电话', lbl_email:'邮件',
+  c_reply:'工作时间内快速回复——非工作时间请留言，我们一定回复。',
+  footer_txt:'© Dank Booking — 旅行预订代理，泰国及全球', f_call:'电话', f_email:'邮件',
+  disc:'Dank Booking 为独立预订代理。折扣基于服务商标准零售价，视出行日期和余位而定；最终价格以报价单为准。',
+  ch_fab:'咨询优惠', ch_title:'Dank Booking 助手 (AI)', ch_ph:'咨询优惠或行程...', ch_send:'发送',
+  ch_hi:'您好 👋 想去哪里旅行？欢迎咨询任何优惠或行程。',
+  ch_err:'抱歉，AI 客服暂不可用——请通过 WhatsApp 联系我们或致电 082-829-8995。',
+  m_subject:'Dank Booking — 报价请求', m_services:'服务', m_dest:'目的地', m_dates:'日期', m_pax:'出行人数',
+  m_adults:'成人', m_children:'儿童', m_pickup:'接载', m_dropoff:'送达', m_class:'舱位', m_stars:'酒店',
+  m_budget:'预算', m_name:'姓名', m_via:'回复渠道', m_notes:'备注'
+},
+ja:{
+  nav_services:'サービス', nav_how:'ご利用の流れ', nav_quote:'見積り依頼', nav_contact:'お問い合わせ', nav_cta:'見積り依頼',
+  chip1:'最大40% OFF', chip2:'タイ＆世界各地', chip3:'どのチャネルでも即返信',
+  hero_title:'同じ旅を<br><span class="pop">もっとお得に</span><br><span class="accent">Dank Booking</span> で',
+  hero_sub:'<b>Dank Booking</b> は特別料金にアクセスできる旅行予約エージェントです。レンタカー、ホテル、航空券、送迎、温泉・スパ・アクティビティまで、タイも世界も対応。旅の希望を伝えるだけで、最大40%オフの見積りをお送りします。確認後に予約確定なので安心です。',
+  hero_btn1:'無料で見積り依頼', hero_btn2:'メッセージを送る', media_label:'お得情報を毎日更新 — タイ＆世界各地',
+  svc_eyebrow:'サービス一覧', svc_h2:'予約できるもの<br>と割引率',
+  svc_p:'すべてのサービスがタイ国内と世界各地に対応。割引は通常販売価格からの割引で、見積り時に確定します。',
+  svc_scope:'タイ + 世界各地', svc_cta:'この特典で見積り',
+  how_eyebrow:'ご利用の流れ', how_h2:'かんたん3ステップ', how_p:'複数サイトの比較は不要。一度伝えるだけで、最適な価格をお探しします。',
+  how1h:'旅の希望を伝える', how1p:'見積りフォームに入力、または LINE / WhatsApp でご連絡ください。目的地・日程・人数・希望サービスをどうぞ。',
+  how2h:'割引付き見積りを受け取る', how2p:'料金と割引を確認し、比較できる見積りをお送りします。無料・キャンセル料なし。',
+  how3h:'確認して出発', how3p:'価格にご納得いただけたら予約確定。手配から確認書の送付まで対応し、旅行中もサポートします。',
+  q_eyebrow:'見積り依頼', q_h2:'行きたい場所を教えてください<br>あとはお任せ',
+  q_p:'必要なサービスを選び、旅の詳細を入力して、お好きなチャネルで送信してください。詳しいほど正確な見積りになります。',
+  perk1:'見積り無料・義務なし — 実際の価格を見てから決められます',
+  perk2:'割引込みの最終価格 — 後から追加料金なし',
+  perk3:'担当者が旅行中もサポート。LINE・WhatsApp・電話・メールで連絡可能',
+  form_h3:'見積りフォーム', form_p:'入力後、メール・WhatsApp で送信、または LINE に貼り付けて送れます。',
+  q_services:'希望サービス（複数選択可）', q_dest:'目的地', q_dest_ph:'例：プーケット / 東京 / パリ',
+  q_start:'出発日', q_end:'終了日', q_adults:'大人', q_children:'子ども',
+  q_pickup:'お迎え場所', q_pickup_ph:'例：スワンナプーム空港', q_dropoff:'お送り先', q_dropoff_ph:'例：パタヤのホテル',
+  q_class:'座席クラス', cls_eco:'エコノミー', cls_prem:'プレミアムエコノミー', cls_biz:'ビジネス', cls_first:'ファースト',
+  q_stars:'ホテルのランク', st_any:'指定なし',
+  q_budget:'おおよその予算（任意）', q_budget_ph:'例：30,000 バーツ',
+  q_name:'お名前', q_name_ph:'氏名',
+  q_channel:'返信チャネル', chan_phone:'電話', chan_email:'メール',
+  q_contact:'番号 / ID / メールアドレス', q_contact_ph:'例：+81 90-xxxx-xxxx',
+  q_notes:'その他のご要望（任意）', q_notes_ph:'例：SUV希望 / ビーチ近くのホテル / 高齢者同行',
+  q_send:'見積りメッセージを作成', q_need:'サービスを1つ以上選び、お名前と連絡先をご入力ください。',
+  q_via:'✓ メッセージ完成 — 送信方法を選んでください：', q_via_email:'メールで送る', q_via_wa:'WhatsAppで送る', q_via_line:'コピーしてLINEを開く', q_copy:'メッセージをコピー',
+  q_copied:'コピーしました ✓ — LINEを開いて貼り付けて送信してください。',
+  q_line_note:'*LINEは自動入力に対応していないため、コピーした内容をチャットに貼り付けてください。',
+  c_eyebrow:'お問い合わせ', c_h2:'お好きなチャネルでどうぞ', c_p:'便利なチャネルをお使いください。ボットだけでなく、スタッフが直接返信します。',
+  lbl_phone:'電話', lbl_email:'メール',
+  c_reply:'営業時間内はすぐに返信します。時間外はメッセージを残していただければ必ず折り返します。',
+  footer_txt:'© Dank Booking — 旅行予約エージェント（タイ＆世界各地）', f_call:'電話', f_email:'メール',
+  disc:'Dank Booking は独立系予約エージェントです。割引は各サービス提供元の通常販売価格に対するもので、旅行時期と空き状況により変動します。最終価格は見積り書で確定します。',
+  ch_fab:'お得情報を聞く', ch_title:'Dank Booking アシスタント (AI)', ch_ph:'旅やお得情報について質問...', ch_send:'送信',
+  ch_hi:'こんにちは 👋 どちらへ旅行をお考えですか？お得情報や旅のことは何でもどうぞ。',
+  ch_err:'申し訳ありません、AIチャットは現在ご利用いただけません。WhatsApp または 082-829-8995 までご連絡ください。',
+  m_subject:'Dank Booking — 見積り依頼', m_services:'サービス', m_dest:'目的地', m_dates:'日程', m_pax:'人数',
+  m_adults:'大人', m_children:'子ども', m_pickup:'お迎え', m_dropoff:'お送り先', m_class:'座席クラス', m_stars:'ホテル',
+  m_budget:'予算', m_name:'お名前', m_via:'返信チャネル', m_notes:'備考'
+}
+};
+
+let lang = 'th';
+
+/* ============ CONTACT HYDRATION ============ */
+function hydrateContacts(){
+  const waUrl = 'https://wa.me/' + CONTACT.whatsapp;
+  document.querySelectorAll('[data-contact="wa"]').forEach(a=>{ a.href = waUrl; });
+  document.querySelectorAll('[data-contact="wa-num"]').forEach(el=>{ el.textContent = CONTACT.phone; });
+  document.querySelectorAll('[data-contact="tel"]').forEach(a=>{ a.href = CONTACT.phoneHref; });
+  document.querySelectorAll('[data-contact="tel-num"]').forEach(el=>{ el.textContent = CONTACT.phone; });
+  document.querySelectorAll('[data-contact="mail"]').forEach(a=>{ a.href = 'mailto:' + CONTACT.email; });
+  document.querySelectorAll('[data-contact="mail-addr"]').forEach(el=>{ el.textContent = CONTACT.email; });
+  if(CONTACT.lineId){
+    document.querySelectorAll('[data-contact="line"]').forEach(a=>{ a.href = 'https://line.me/R/ti/p/' + encodeURIComponent(CONTACT.lineId); });
+    document.querySelectorAll('[data-contact="line-id"]').forEach(el=>{ el.textContent = CONTACT.lineId; });
+  } else {
+    /* no LINE ID yet → hide every LINE-only element until the owner adds one */
+    document.querySelectorAll('.line-only').forEach(el=>{ el.style.display = 'none'; });
+  }
+}
+hydrateContacts();
+
+/* ============ SERVICES GRID ============ */
+const svcGrid = document.getElementById('svc-grid');
+function renderServices(){
+  svcGrid.innerHTML = '';
+  SERVICES.forEach(s=>{
+    const el = document.createElement('div');
+    el.className = 'svc-card';
+    el.innerHTML = `
+      <span class="deal-badge">${s.deal[lang]}</span>
+      <div class="svc-ico">${s.icon}</div>
+      <h3>${s.n[lang]}</h3>
+      <div class="scope">${T[lang].svc_scope}</div>
+      <p>${s.d[lang]}</p>
+      <button type="button" class="svc-cta" data-svc="${s.id}">${T[lang].svc_cta} →</button>`;
+    el.querySelector('.svc-cta').addEventListener('click', ()=>preselectService(s.id));
+    svcGrid.appendChild(el);
+  });
+}
+
+/* ============ MARQUEE ============ */
+function renderMarquee(){
+  const track = document.getElementById('mq-track');
+  const items = SERVICES.map(s=>`<div class="mq-item">${s.n[lang]} <b>${s.deal[lang]}</b></div>`).join('');
+  track.innerHTML = items + items;
+}
+
+/* ============ QUOTE FORM ============ */
+const fSvcs = document.getElementById('f-svcs');
+function renderFormServices(){
+  const checked = {};
+  fSvcs.querySelectorAll('input').forEach(i=>{ checked[i.value] = i.checked; });
+  fSvcs.innerHTML = '';
+  SERVICES.forEach(s=>{
+    const label = document.createElement('label');
+    label.className = 'f-svc';
+    label.innerHTML = `<input type="checkbox" value="${s.id}" ${checked[s.id]?'checked':''}><span>${s.n[lang]}</span><span class="fd">${s.deal[lang]}</span>`;
+    label.querySelector('input').addEventListener('change', syncFormVisibility);
+    fSvcs.appendChild(label);
+  });
+  syncFormVisibility();
+}
+function selectedServices(){
+  return Array.from(fSvcs.querySelectorAll('input:checked')).map(i=>i.value);
+}
+function syncFormVisibility(){
+  const sel = selectedServices();
+  document.getElementById('f-route').classList.toggle('f-hidden', !(sel.includes('car')||sel.includes('transfer')));
+  document.getElementById('f-flight').classList.toggle('f-hidden', !sel.includes('flight'));
+  document.getElementById('f-hotel').classList.toggle('f-hidden', !sel.includes('hotel'));
+}
+function preselectService(id){
+  const cb = fSvcs.querySelector(`input[value="${id}"]`);
+  if(cb && !cb.checked){ cb.checked = true; syncFormVisibility(); }
+  document.getElementById('quote').scrollIntoView({behavior:'smooth'});
+}
+
+function buildQuoteMessage(){
+  const d = T[lang];
+  const sel = selectedServices();
+  const svcNames = sel.map(id=>{
+    const s = SERVICES.find(x=>x.id===id);
+    return `${s.n[lang]} (${s.deal[lang]})`;
+  }).join(', ');
+  const v = id=>document.getElementById(id).value.trim();
+  const lines = [`[${d.m_subject}]`, `${d.m_services}: ${svcNames}`];
+  if(v('q-dest')) lines.push(`${d.m_dest}: ${v('q-dest')}`);
+  if(v('q-start')||v('q-end')) lines.push(`${d.m_dates}: ${v('q-start')||'?'} → ${v('q-end')||'?'}`);
+  lines.push(`${d.m_pax}: ${v('q-adults')||'1'} ${d.m_adults}${(+v('q-children')||0)>0 ? ` + ${v('q-children')} ${d.m_children}` : ''}`);
+  if((sel.includes('car')||sel.includes('transfer')) && (v('q-pickup')||v('q-dropoff'))) lines.push(`${d.m_pickup}: ${v('q-pickup')||'-'} → ${d.m_dropoff}: ${v('q-dropoff')||'-'}`);
+  if(sel.includes('flight')){
+    const cs = document.getElementById('q-class');
+    lines.push(`${d.m_class}: ${cs.options[cs.selectedIndex].textContent}`);
+  }
+  if(sel.includes('hotel')){
+    const st = document.getElementById('q-stars');
+    lines.push(`${d.m_stars}: ${st.options[st.selectedIndex].textContent}`);
+  }
+  if(v('q-budget')) lines.push(`${d.m_budget}: ${v('q-budget')}`);
+  const ch = document.getElementById('q-channel');
+  lines.push(`${d.m_name}: ${v('q-name')}`);
+  lines.push(`${d.m_via}: ${ch.options[ch.selectedIndex].textContent} — ${v('q-contact')}`);
+  if(v('q-notes')) lines.push(`${d.m_notes}: ${v('q-notes')}`);
+  return lines.join('\n');
+}
+
+let lastMsg = '';
+document.getElementById('quote-form').addEventListener('submit', function(e){
+  e.preventDefault();
+  const ok = selectedServices().length > 0
+    && document.getElementById('q-name').value.trim()
+    && document.getElementById('q-contact').value.trim();
+  const need = document.getElementById('q-need');
+  const via = document.getElementById('q-via');
+  if(!ok){ need.style.display = 'block'; via.classList.remove('open'); return; }
+  need.style.display = 'none';
+  lastMsg = buildQuoteMessage();
+  via.classList.add('open');
+  via.scrollIntoView({behavior:'smooth', block:'nearest'});
+});
+
+function copyMsg(){
+  return navigator.clipboard && navigator.clipboard.writeText
+    ? navigator.clipboard.writeText(lastMsg)
+    : new Promise((res,rej)=>{
+        const ta = document.createElement('textarea');
+        ta.value = lastMsg; document.body.appendChild(ta); ta.select();
+        try{ document.execCommand('copy'); res(); }catch(err){ rej(err); }
+        document.body.removeChild(ta);
+      });
+}
+function showCopied(){
+  const n = document.getElementById('q-copied-note');
+  n.style.display = 'block';
+  setTimeout(()=>{ n.style.display = 'none'; }, 6000);
+}
+document.getElementById('qv-mail').addEventListener('click', ()=>{
+  window.open(`mailto:${CONTACT.email}?subject=${encodeURIComponent(T[lang].m_subject)}&body=${encodeURIComponent(lastMsg)}`);
+});
+document.getElementById('qv-wa').addEventListener('click', ()=>{
+  window.open(`https://wa.me/${CONTACT.whatsapp}?text=${encodeURIComponent(lastMsg)}`, '_blank');
+});
+document.getElementById('qv-line').addEventListener('click', ()=>{
+  copyMsg().finally(()=>{
+    showCopied();
+    if(CONTACT.lineId) window.open('https://line.me/R/ti/p/' + encodeURIComponent(CONTACT.lineId), '_blank');
+  });
+});
+document.getElementById('qv-copy').addEventListener('click', ()=>{ copyMsg().finally(showCopied); });
+
+/* ============ LANGUAGE SWITCHER ============ */
+function setLang(l){
+  lang = l;
+  document.documentElement.lang = l;
+  const dict = T[l];
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const k = el.dataset.i18n;
+    if(dict[k] !== undefined) el.innerHTML = dict[k];
+  });
+  document.querySelectorAll('[data-ph]').forEach(el=>{
+    const k = el.dataset.ph;
+    if(dict[k] !== undefined) el.placeholder = dict[k];
+  });
+  document.querySelectorAll('#lang button').forEach(b=>b.classList.toggle('active', b.dataset.lang===l));
+  renderServices();
+  renderMarquee();
+  renderFormServices();
+}
+document.querySelectorAll('#lang button').forEach(b=>{
+  b.addEventListener('click', ()=>setLang(b.dataset.lang));
+});
+
+/* ============ AI CHAT ASSISTANT ============ */
+const chatHist = [];
+const chatMsgs = document.getElementById('chat-msgs');
+function chatBubble(txt, cls){
+  const d = document.createElement('div');
+  d.className = 'chat-msg ' + cls;
+  d.textContent = txt;
+  chatMsgs.appendChild(d);
+  chatMsgs.scrollTop = chatMsgs.scrollHeight;
+  return d;
+}
+function dankContext(){
+  const svcs = SERVICES.map(s=>`${s.n.en} | ${s.n.th} | ${s.deal.en}`).join('; ');
+  const line = CONTACT.lineId ? `LINE ${CONTACT.lineId}, ` : '';
+  return `You are the friendly assistant for Dank Booking, an independent travel booking agent (Thailand & worldwide) with access to trade discounts. Services and discounts vs standard retail rates: ${svcs}. Your goals: help visitors plan what to book, explain how the service works (they submit a quote request → Dank Booking replies with a discounted quote → they confirm before anything is booked), and guide them to the quote form on this page or to contact channels: ${line}WhatsApp/phone ${CONTACT.phone}, email ${CONTACT.email}. Reply in the same language the customer writes in (site language now: ${lang}; default Thai). Keep replies short (2-5 sentences), warm and practical. IMPORTANT: discounts are "up to" figures confirmed at quoting — NEVER invent specific prices, availability, or booking confirmations. Never claim a booking has been made; all bookings are confirmed by the human team.`;
+}
+async function sendChat(){
+  const inp = document.getElementById('chat-input');
+  const q = inp.value.trim();
+  if(!q) return;
+  inp.value = '';
+  chatBubble(q, 'me');
+  chatHist.push({role:'user', content:q});
+  const loader = chatBubble('...', 'bot load');
+  try{
+    const res = await fetch('/api/chat', {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({
+        messages:[
+          {role:'user', content: dankContext()},
+          {role:'assistant', content:'Understood. I am ready to help Dank Booking customers.'},
+          ...chatHist
+        ]
+      })
+    });
+    const data = await res.json();
+    const txt = ((data.content||[]).filter(c=>c.type==='text').map(c=>c.text).join('\n')).trim();
+    loader.remove();
+    if(res.ok && txt){
+      chatBubble(txt, 'bot');
+      chatHist.push({role:'assistant', content:txt});
+    } else {
+      chatBubble(T[lang].ch_err, 'bot');
+    }
+  }catch(e){
+    loader.remove();
+    chatBubble(T[lang].ch_err, 'bot');
+  }
+}
+document.getElementById('chat-fab').addEventListener('click', ()=>{
+  const p = document.getElementById('chat-panel');
+  p.classList.toggle('open');
+  if(p.classList.contains('open') && chatMsgs.children.length===0){
+    chatBubble(T[lang].ch_hi, 'bot');
+  }
+});
+document.getElementById('chat-close').addEventListener('click', ()=>document.getElementById('chat-panel').classList.remove('open'));
+document.getElementById('chat-send').addEventListener('click', sendChat);
+document.getElementById('chat-input').addEventListener('keydown', e=>{ if(e.key==='Enter') sendChat(); });
+
+/* initial render (Thai default) */
+renderServices();
+renderMarquee();
+renderFormServices();
+</script>
+</body>
+</html>
