@@ -104,8 +104,12 @@
   .svc-card h3{font-size:1.2rem;line-height:1.25;padding-right:20px;}
   .svc-card .scope{margin-top:5px;font-family:'IBM Plex Mono','Noto Sans Thai',monospace;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--mist);}
   .svc-card p{margin-top:12px;font-size:.92rem;line-height:1.75;color:#4c5a5e;flex:1;}
-  .svc-cta{margin-top:18px;align-self:flex-start;font-weight:700;font-size:.82rem;text-transform:uppercase;letter-spacing:.07em;color:var(--ocean);border:none;background:none;cursor:pointer;font-family:inherit;padding:0;border-bottom:2px solid var(--sunset);padding-bottom:3px;transition:color .2s;}
+  .svc-links{margin-top:18px;display:flex;justify-content:space-between;align-items:center;gap:8px 14px;flex-wrap:wrap;}
+  .svc-cta{align-self:flex-start;font-weight:700;font-size:.82rem;text-transform:uppercase;letter-spacing:.07em;color:var(--ocean);border:none;background:none;cursor:pointer;font-family:inherit;padding:0;border-bottom:2px solid var(--sunset);padding-bottom:3px;transition:color .2s;}
   .svc-cta:hover{color:var(--ocean-deep);}
+  .svc-ext{font-family:'IBM Plex Mono','Noto Sans Thai',monospace;font-size:.72rem;color:var(--mist);transition:color .2s;white-space:nowrap;}
+  .svc-ext b{font-weight:500;color:#5d6c70;}
+  .svc-ext:hover, .svc-ext:hover b{color:var(--ocean);}
 
   #how{background:var(--shell);}
   .how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,3vw,40px);}
@@ -466,35 +470,40 @@ const CONTACT = {
 
 /* ============ SERVICES ============ */
 const SERVICES = [
-  {id:'car', icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 11l1.5-4.5A2 2 0 0 1 8.4 5h7.2a2 2 0 0 1 1.9 1.5L19 11"/><path d="M3 16v-3a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v3"/><circle cx="7" cy="16.5" r="1.8"/><circle cx="17" cy="16.5" r="1.8"/></svg>',
+  {id:'car', site:'QEEQ.com', url:'https://m.qeeq.com/',
+   icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 11l1.5-4.5A2 2 0 0 1 8.4 5h7.2a2 2 0 0 1 1.9 1.5L19 11"/><path d="M3 16v-3a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v3"/><circle cx="7" cy="16.5" r="1.8"/><circle cx="17" cy="16.5" r="1.8"/></svg>',
    n:{th:'รถเช่า',en:'Car Rental',zh:'租车',ja:'レンタカー'},
    deal:{th:'ลด 30–40%',en:'30–40% OFF',zh:'省30–40%',ja:'30–40% OFF'},
    d:{th:'รถเก๋ง SUV รถตู้ ทั้งขับเองและพร้อมคนขับ รับ-คืนสนามบินหรือในเมือง จองผ่านเราได้ราคาต่ำกว่าจองตรง',
       en:'Sedans, SUVs and vans — self-drive or with driver, airport or city pick-up. Booking through us beats booking direct.',
       zh:'轿车、SUV、面包车——自驾或含司机，机场或市区取还车。通过我们预订比直接预订更便宜。',
       ja:'セダン・SUV・バン。セルフドライブもドライバー付きも、空港・市内受け渡し対応。直接予約よりお得です。'}},
-  {id:'hotel', icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21V7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14"/><path d="M1 21h22"/><path d="M8 9h.01M12 9h.01M16 9h.01M8 13h.01M12 13h.01M16 13h.01"/><path d="M10 21v-4h4v4"/></svg>',
+  {id:'hotel', site:'Agoda.com', url:'https://www.agoda.com/',
+   icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21V7a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14"/><path d="M1 21h22"/><path d="M8 9h.01M12 9h.01M16 9h.01M8 13h.01M12 13h.01M16 13h.01"/><path d="M10 21v-4h4v4"/></svg>',
    n:{th:'จองโรงแรม',en:'Hotel Booking',zh:'酒店预订',ja:'ホテル予約'},
    deal:{th:'ลด 30–40%',en:'30–40% OFF',zh:'省30–40%',ja:'30–40% OFF'},
    d:{th:'ตั้งแต่ 3 ดาวถึงหรู 5 ดาว รีสอร์ท พูลวิลล่า ทั้งไทยและต่างประเทศ — บอกสไตล์ที่ชอบ เราหาราคาดีที่สุดให้',
       en:'From solid 3-star stays to 5-star luxury, resorts and pool villas — in Thailand and worldwide. Tell us your style, we find the best rate.',
       zh:'从舒适三星到豪华五星、度假村、泳池别墅——泰国及全球。告诉我们您的喜好，我们找到最优价格。',
       ja:'3つ星からラグジュアリー5つ星、リゾート、プールヴィラまで。タイも海外も、ご希望に合わせて最安値をお探しします。'}},
-  {id:'flight', icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>',
+  {id:'flight', site:'SmartFares.com', url:'https://www.smartfares.com/',
+   icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"/></svg>',
    n:{th:'ตั๋วเครื่องบิน',en:'Flights',zh:'机票',ja:'航空券'},
    deal:{th:'ลดสูงสุด 20–30%',en:'UP TO 20–30% OFF',zh:'最高省20–30%',ja:'最大20–30% OFF'},
    d:{th:'ในประเทศและระหว่างประเทศ ทุกชั้นโดยสาร — ส่งเส้นทางกับวันเดินทางมา เราเช็คราคาหลายสายการบินให้พร้อมส่วนลด',
       en:'Domestic and international, every cabin class. Send your route and dates — we compare airlines and apply our discount.',
       zh:'国内与国际航线，全舱位。发送您的行程和日期，我们比价多家航空公司并给出折扣。',
       ja:'国内線・国際線、全クラス対応。ルートと日程を送るだけで、複数航空会社を比較し割引価格をご案内します。'}},
-  {id:'transfer', icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 6v6M15 6v6M2 12h19.6"/><path d="M18 18h3s.5-1.7.8-2.8c.1-.4.2-.8.2-1.2v-4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v8h3"/><circle cx="7" cy="18" r="2"/><circle cx="15" cy="18" r="2"/></svg>',
+  {id:'transfer', site:'Daytrip.com', url:'https://daytrip.com/',
+   icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 6v6M15 6v6M2 12h19.6"/><path d="M18 18h3s.5-1.7.8-2.8c.1-.4.2-.8.2-1.2v-4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v8h3"/><circle cx="7" cy="18" r="2"/><circle cx="15" cy="18" r="2"/></svg>',
    n:{th:'รถรับ-ส่ง',en:'Transfers',zh:'接送服务',ja:'送迎・トランスファー'},
    deal:{th:'ลด 40%',en:'40% OFF',zh:'省40%',ja:'40% OFF'},
    d:{th:'รับ-ส่งสนามบิน และเดินทางข้ามเมือง รถส่วนตัวพร้อมคนขับ ตรงเวลา ราคาเหมาชัดเจน ทั้งไทยและต่างประเทศ',
       en:'Airport pick-up & drop-off and intercity rides — private car with driver, on time, one clear flat price. Thailand and worldwide.',
       zh:'机场接送与跨城市出行——专车含司机，准时可靠，一口价。泰国及全球均可安排。',
       ja:'空港送迎と都市間移動。ドライバー付き専用車、時間厳守、明朗な定額料金。タイも海外も手配可能。'}},
-  {id:'activity', icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 3c-1 2 1 3 0 5M12 3c-1 2 1 3 0 5M17 3c-1 2 1 3 0 5"/><path d="M3 12h18v2a7 7 0 0 1-7 7h-4a7 7 0 0 1-7-7v-2z"/><path d="M21 14h1a2 2 0 0 0 0-4h-1"/></svg>',
+  {id:'activity', site:'Trazy.com', url:'https://www.trazy.com/',
+   icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 3c-1 2 1 3 0 5M12 3c-1 2 1 3 0 5M17 3c-1 2 1 3 0 5"/><path d="M3 12h18v2a7 7 0 0 1-7 7h-4a7 7 0 0 1-7-7v-2z"/><path d="M21 14h1a2 2 0 0 0 0-4h-1"/></svg>',
    n:{th:'ออนเซ็น สปา และกิจกรรม',en:'Onsen, Spa & Activities',zh:'温泉·SPA·活动',ja:'温泉・スパ・アクティビティ'},
    deal:{th:'ลด 30–40%',en:'30–40% OFF',zh:'省30–40%',ja:'30–40% OFF'},
    d:{th:'ออนเซ็น สปา ทัวร์วันเดียว สวนสนุก บัตรกิจกรรมต่างๆ — จองล่วงหน้าผ่านเรา ถูกกว่าซื้อหน้างานเยอะ',
@@ -513,7 +522,7 @@ th:{
   hero_btn1:'ขอใบเสนอราคาฟรี', hero_btn2:'ทักหาเราเลย', media_label:'ดีลอัปเดตทุกวัน — ไทยและทั่วโลก',
   svc_eyebrow:'บริการของเรา', svc_h2:'จองอะไรได้บ้าง<br>ลดเท่าไหร่',
   svc_p:'ทุกบริการครอบคลุมทั้งประเทศไทยและทั่วโลก — ราคาที่เสนอคือราคาหลังหักส่วนลดจากราคาขายปกติ ยืนยันจริงตอนเสนอราคา',
-  svc_scope:'ไทย + ทั่วโลก', svc_cta:'ขอราคาบริการนี้',
+  svc_scope:'ไทย + ทั่วโลก', svc_cta:'ขอราคาบริการนี้', svc_browse:'ดูตัวเลือกที่',
   how_eyebrow:'วิธีจอง', how_h2:'ง่ายแค่ 3 ขั้นตอน', how_p:'ไม่ต้องเทียบราคาเองหลายเว็บ — บอกเรามาที่เดียว เดี๋ยวเราหาราคาที่ดีที่สุดให้',
   how1h:'บอกทริปของคุณ', how1p:'กรอกฟอร์มขอราคา หรือทักมาทาง LINE / WhatsApp — บอกปลายทาง วันเดินทาง จำนวนคน และบริการที่ต้องการ',
   how2h:'รับใบเสนอราคาพร้อมส่วนลด', how2p:'เราเช็คราคาและสิทธิ์ส่วนลดให้ แล้วส่งใบเสนอราคากลับไปให้เปรียบเทียบ — ไม่มีค่าใช้จ่าย ไม่มีข้อผูกมัด',
@@ -558,7 +567,7 @@ en:{
   hero_btn1:'Get a free quote', hero_btn2:'Message us', media_label:'Deals updated daily — Thailand & worldwide',
   svc_eyebrow:'Our services', svc_h2:'What you can book<br>and how much you save',
   svc_p:'Every service covers both Thailand and worldwide destinations. Discounts are off standard retail rates and confirmed in your quote.',
-  svc_scope:'Thailand + worldwide', svc_cta:'Get this deal',
+  svc_scope:'Thailand + worldwide', svc_cta:'Get this deal', svc_browse:'Browse options on',
   how_eyebrow:'How it works', how_h2:'Three simple steps', how_p:'Stop comparing ten websites — tell us once and we find the best price for you.',
   how1h:'Tell us your trip', how1p:'Fill in the quote form or message us on LINE / WhatsApp — destination, dates, travellers and the services you need.',
   how2h:'Get a discounted quote', how2p:'We check prices and apply our discounts, then send a quote back for you to compare. Free, no obligation.',
@@ -603,7 +612,7 @@ zh:{
   hero_btn1:'免费获取报价', hero_btn2:'立即联系', media_label:'优惠每日更新 — 泰国及全球',
   svc_eyebrow:'我们的服务', svc_h2:'可以预订什么<br>能省多少',
   svc_p:'所有服务均覆盖泰国及全球目的地。折扣基于标准零售价计算，并在报价单中确认。',
-  svc_scope:'泰国 + 全球', svc_cta:'获取此优惠',
+  svc_scope:'泰国 + 全球', svc_cta:'获取此优惠', svc_browse:'浏览选项：',
   how_eyebrow:'预订流程', how_h2:'简单三步', how_p:'无需自己比价多个网站——告诉我们一次，我们为您找到最优价格。',
   how1h:'告诉我们您的行程', how1p:'填写报价表格，或通过 LINE / WhatsApp 联系我们——目的地、日期、人数及所需服务。',
   how2h:'收到含折扣的报价', how2p:'我们查价并应用折扣，然后发回报价单供您比较——免费、无义务。',
@@ -648,7 +657,7 @@ ja:{
   hero_btn1:'無料で見積り依頼', hero_btn2:'メッセージを送る', media_label:'お得情報を毎日更新 — タイ＆世界各地',
   svc_eyebrow:'サービス一覧', svc_h2:'予約できるもの<br>と割引率',
   svc_p:'すべてのサービスがタイ国内と世界各地に対応。割引は通常販売価格からの割引で、見積り時に確定します。',
-  svc_scope:'タイ + 世界各地', svc_cta:'この特典で見積り',
+  svc_scope:'タイ + 世界各地', svc_cta:'この特典で見積り', svc_browse:'選択肢を見る：',
   how_eyebrow:'ご利用の流れ', how_h2:'かんたん3ステップ', how_p:'複数サイトの比較は不要。一度伝えるだけで、最適な価格をお探しします。',
   how1h:'旅の希望を伝える', how1p:'見積りフォームに入力、または LINE / WhatsApp でご連絡ください。目的地・日程・人数・希望サービスをどうぞ。',
   how2h:'割引付き見積りを受け取る', how2p:'料金と割引を確認し、比較できる見積りをお送りします。無料・キャンセル料なし。',
@@ -721,7 +730,10 @@ function renderServices(){
       <h3>${s.n[lang]}</h3>
       <div class="scope">${T[lang].svc_scope}</div>
       <p>${s.d[lang]}</p>
-      <button type="button" class="svc-cta" data-svc="${s.id}">${T[lang].svc_cta} →</button>`;
+      <div class="svc-links">
+        <button type="button" class="svc-cta" data-svc="${s.id}">${T[lang].svc_cta} →</button>
+        <a class="svc-ext" href="${s.url}" target="_blank" rel="noopener">${T[lang].svc_browse} <b>${s.site} ↗</b></a>
+      </div>`;
     el.querySelector('.svc-cta').addEventListener('click', ()=>preselectService(s.id));
     svcGrid.appendChild(el);
   });
@@ -871,9 +883,9 @@ function chatBubble(txt, cls){
   return d;
 }
 function dankContext(){
-  const svcs = SERVICES.map(s=>`${s.n.en} | ${s.n.th} | ${s.deal.en}`).join('; ');
+  const svcs = SERVICES.map(s=>`${s.n.en} | ${s.n.th} | ${s.deal.en} | browse options at ${s.site}`).join('; ');
   const line = CONTACT.lineId ? `LINE ${CONTACT.lineId}, ` : '';
-  return `You are the friendly assistant for Dank Booking, an independent travel booking agent (Thailand & worldwide) with access to trade discounts. Services and discounts vs standard retail rates: ${svcs}. Your goals: help visitors plan what to book, explain how the service works (they submit a quote request → Dank Booking replies with a discounted quote → they confirm before anything is booked), and guide them to the quote form on this page or to contact channels: ${line}WhatsApp/phone ${CONTACT.phone}, email ${CONTACT.email}. Reply in the same language the customer writes in (site language now: ${lang}; default Thai). Keep replies short (2-5 sentences), warm and practical. IMPORTANT: discounts are "up to" figures confirmed at quoting — NEVER invent specific prices, availability, or booking confirmations. Never claim a booking has been made; all bookings are confirmed by the human team.`;
+  return `You are the friendly assistant for Dank Booking, an independent travel booking agent (Thailand & worldwide) with access to trade discounts. Services and discounts vs standard retail rates: ${svcs}. Your goals: help visitors plan what to book, explain how the service works (they submit a quote request → Dank Booking replies with a discounted quote → they confirm before anything is booked), and guide them to the quote form on this page or to contact channels. Visitors can browse each partner site to pick what they like, then send that pick to Dank Booking to get it at a discounted price. Contact channels: ${line}WhatsApp/phone ${CONTACT.phone}, email ${CONTACT.email}. Reply in the same language the customer writes in (site language now: ${lang}; default Thai). Keep replies short (2-5 sentences), warm and practical. IMPORTANT: discounts are "up to" figures confirmed at quoting — NEVER invent specific prices, availability, or booking confirmations. Never claim a booking has been made; all bookings are confirmed by the human team.`;
 }
 async function sendChat(){
   const inp = document.getElementById('chat-input');
